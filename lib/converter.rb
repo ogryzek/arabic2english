@@ -40,5 +40,13 @@ def convert_double_digits(nums)
 end
 
 def convert_triple_digits(nums)
-  "nine hundred ninety nine"
+  one = nums[2].to_i
+  ten = nums[1].to_i
+  hundred = ONES[nums[0].to_i]
+  tens = ten == 0 ? ONES[one] : convert_double_digits(nums[1..2])
+  if ten == 0 && one == 0
+    "#{hundred} hundred"
+  else
+    "#{hundred} hundred #{tens}"
+  end
 end
