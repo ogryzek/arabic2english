@@ -1,3 +1,8 @@
+ONES = [
+  'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+  'nine', 'ten'
+]
+
 def converter(num)
-  "one"
+  ONES[num.to_i]
 end
