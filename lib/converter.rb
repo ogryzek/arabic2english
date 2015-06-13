@@ -29,6 +29,10 @@ def convert_double_digits(nums)
   if nums[0].to_i == 1
     TEENS[nums[1].to_i]
   else
+    if nums[1].to_i == 0
+      TENS[nums[0].to_i]
+    else
     "#{TENS[nums[0].to_i]} #{ONES[nums[1].to_i]}"
+    end
   end
 end

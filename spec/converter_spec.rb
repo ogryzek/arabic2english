@@ -16,5 +16,7 @@ describe "arabic2english" do
 
   it "should handle double digit numbers up to 99" do
     expect { arabic2english 99 }.to output("ninety nine\n").to_stdout
+    expect { arabic2english 20 }.to output("twenty\n").to_stdout
+    expect { arabic2english 01 }.to output("one\n").to_stdout
   end
 end
