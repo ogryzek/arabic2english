@@ -4,5 +4,10 @@ ONES = [
 ]
 
 def converter(num)
-  ONES[num.to_i]
+  case num.to_s.length
+  when 1
+    ONES[num.to_i]
+  when 2
+    "ten"
+  end
 end

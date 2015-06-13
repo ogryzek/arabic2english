@@ -7,4 +7,8 @@ describe "arabic2english" do
     expect { arabic2english 8 }.to output("eight\n").to_stdout
     expect { arabic2english 0 }.to output("zero\n").to_stdout
   end
+
+  it "should handle double digit numbers" do
+    expect { arabic2english 10 }.to output("ten\n").to_stdout
+  end
 end
