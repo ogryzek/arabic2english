@@ -8,6 +8,11 @@ TEENS = [
   'seventeen', 'eighteen', 'nineteen'
 ]
 
+TENS = [
+  'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
+  'eighty', 'ninety'
+]
+
 def converter(num)
   num_str = num.to_s
 
@@ -21,5 +26,9 @@ def converter(num)
 end
 
 def convert_double_digits(nums)
-  TEENS[nums[1].to_i]
+  if nums[0].to_i == 1
+    TEENS[nums[1].to_i]
+  else
+    "#{TENS[nums[0].to_i]} #{ONES[nums[1].to_i]}"
+  end
 end
