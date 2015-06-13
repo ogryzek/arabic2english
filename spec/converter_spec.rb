@@ -19,4 +19,8 @@ describe "arabic2english" do
     expect { arabic2english 20 }.to output("twenty\n").to_stdout
     expect { arabic2english 01 }.to output("one\n").to_stdout
   end
+
+  it "should handle triple digit numbers up to 999" do
+    expect { arabic2english 999 }.to output("nine hundred ninety nine\n").to_stdout
+  end
 end
