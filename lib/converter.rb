@@ -16,7 +16,6 @@ TENS = [
 def converter(num)
   num_str = num.to_s
   num_arr = num_str.split('')
-
   case num_str.length
   when 1
     ONES[num.to_i]
@@ -28,14 +27,13 @@ def converter(num)
 end
 
 def convert_double_digits(nums)
-  if nums[0].to_i == 1
-    TEENS[nums[1].to_i]
+  first_num, second_num = nums[0].to_i, nums[1].to_i
+  if first_num == 1
+    TEENS[second_num]
+  elsif second_num == 0
+    TENS[first_num]
   else
-    if nums[1].to_i == 0
-      TENS[nums[0].to_i]
-    else
-    "#{TENS[nums[0].to_i]} #{ONES[nums[1].to_i]}"
-    end
+    "#{TENS[first_num]} #{ONES[second_num]}"
   end
 end
 
@@ -44,9 +42,5 @@ def convert_triple_digits(nums)
   ten = nums[1].to_i
   hundred = ONES[nums[0].to_i]
   tens = ten == 0 ? ONES[one] : convert_double_digits(nums[1..2])
-  if ten == 0 && one == 0
-    "#{hundred} hundred"
-  else
-    "#{hundred} hundred #{tens}"
-  end
+  ten == 0 && one == 0 ? "#{hundred} hundred" : "#{hundred} hundred #{tens}"
 end
