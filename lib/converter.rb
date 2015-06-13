@@ -20,6 +20,6 @@ def converter(num)
   end
 end
 
-def convert_double_digits(num)
-  "ten"
+def convert_double_digits(nums)
+  TEENS[nums[1].to_i]
 end
